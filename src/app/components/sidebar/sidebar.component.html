@@ -1,0 +1,86 @@
+
+
+
+
+<!-- partial:partials/_sidebar.html -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">
+          <i class="mat-icon menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+     
+      
+        <div class="collapse" id="form-elements">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+          </ul>
+        </div>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+          <i class="menu-icon mdi mdi-table"></i>
+          <span class="menu-title">Demandes</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="tables">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" routerLink="/demandes" >Toutes les demandes</a></li>
+          </ul>
+          <div class="collapse" id="tables">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" routerLink="/accepted">Demandes Acceptées</a></li>
+            </ul>
+          </div>
+          <div class="collapse" id="tables">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" routerLink="/refused">Demande refusées</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+          <i class="menu-icon mdi mdi-account-circle-outline"></i>
+          <span class="menu-title">Demandeurs</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="charts">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" routerLink="/infos">Informations</a></li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+          <i class="menu-icon mdi mdi-chart-line"></i>
+          <span class="menu-title">Etablissement</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="icons">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" routerLink="/chart">charts</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item nav-category">pages</li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <i class="menu-icon mdi mdi-account-circle-outline"></i>
+          <span class="menu-title">User Pages</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" routerLink="/login"> Login </a></li>
+          </ul>
+        </div>
+        
+      </li>
+      
+    </ul>
+  </nav>

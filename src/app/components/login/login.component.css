@@ -1,0 +1,101 @@
+.fieldForm{
+    width: 100%;
+    height: 80px;
+    align-items: center;
+  }
+  mat-form-field.mat-form-field {
+    font-size: 14px;
+    width: 300px;
+  }
+  mat-error.mat-error{
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  div{
+    display: block;
+  }
+  .mat-form-field-prefix .mat-icon, .mat-form-field-suffix .mat-icon {
+    font-size: 140%;
+  }
+  .inputForm{
+   padding-left: 5px;
+  }
+  .fontForm{
+    font-size: 20px;
+    color: gray;
+  }
+  .btnStyle{
+  width: 12%;
+  background-color: #9d29e6;
+  color: white;
+  
+  align-items: center;
+  
+  }
+  .spanTitle{
+    font-size: x-large;
+    font-weight: bold;
+    margin-left: 5px;
+    height: fit-content;
+  }
+  .main-content{
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.4);
+    margin: 5em auto;
+    display: flex;
+  }
+  .company__info{
+    background-color: #283240;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+  }
+  .fa-android{
+    font-size:3em;
+  }
+  @media screen and (max-width: 640px) {
+    .main-content{width: 90%;}
+    .company__info{
+      display: none;
+    }
+    .login_form{
+      border-top-left-radius:20px;
+      border-bottom-left-radius:20px;
+    }
+  }
+  @media screen and (min-width: 642px) and (max-width:800px){
+    .main-content{width: 70%;}
+  }
+  .row > h2{
+    color:#283240;
+  }
+  .login_form{
+    background-color: #fff;
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+  }
+  form{
+    padding: 0 2em;
+  }
+  
+  .btn{
+    transition: all .5s ease;
+    width: 70%;
+    border-radius: 30px;
+    color:#283240;
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #283240;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+  .btn:hover, .btn:focus{
+    background-color: #283240;
+    color:#fff;
+  }

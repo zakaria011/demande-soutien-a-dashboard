@@ -9,8 +9,12 @@ import { Component } from '@angular/core';
                 '../assets/vendors/typicons/typicons.css',
                 '../assets/vendors/simple-line-icons/css/simple-line-icons.css',
                '../assets/vendors/css/vendor.bundle.base.css',
-               '../assets/css/vertical-layout-light/style.css'
-               //'../assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css',
+               '../assets/css/vertical-layout-light/style.css',
+              
+               
+
+
+              //'../assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css',
               //'../assets/js/select.dataTables.min.css'
 
 ]
