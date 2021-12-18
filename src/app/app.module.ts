@@ -15,6 +15,7 @@ import { EditDemandeComponent } from './components/edit-demande/edit-demande.com
 import { HttpClientModule } from '@angular/common/http';
 import { InprogressDemandesComponent } from './components/inprogress-demandes/inprogress-demandes.component';
 import { DataTablesModule } from 'angular-datatables';
+import { DemandesEncoursComponent } from './components/demandes-encours/demandes-encours.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { DataTablesModule } from 'angular-datatables';
     LoginComponent,
     EditDemandeComponent,
     InprogressDemandesComponent,
+    DemandesEncoursComponent,
 
 
   ],

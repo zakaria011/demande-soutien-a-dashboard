@@ -10,6 +10,7 @@ import { InfosDemandeursComponent } from './components/infos-demandeurs/infos-de
 import { EtabChartComponent } from './components/etab-chart/etab-chart.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditDemandeComponent } from './components/edit-demande/edit-demande.component';
+import { DemandesEncoursComponent } from './components/demandes-encours/demandes-encours.component';
 const ROUTES : Routes = [
   {path : 'home', component : HomeComponent},
   {path : 'demandes', component : ToutesDemandesComponent},
@@ -19,6 +20,7 @@ const ROUTES : Routes = [
   {path : 'chart', component : EtabChartComponent},
   {path : 'login', component : LoginComponent},
   {path : 'edit', component : EditDemandeComponent},
+  {path : 'encours', component : DemandesEncoursComponent},
  
   
 
