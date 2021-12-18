@@ -9,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 ]
 })
 export class InfosDemandeursComponent implements OnInit {
+  displayStyle = "none";
 
-  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
   ngOnInit(): void {
+
   }
 
 }

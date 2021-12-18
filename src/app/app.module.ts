@@ -12,6 +12,9 @@ import { InfosDemandeursComponent } from './components/infos-demandeurs/infos-de
 import { EtabChartComponent } from './components/etab-chart/etab-chart.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditDemandeComponent } from './components/edit-demande/edit-demande.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InprogressDemandesComponent } from './components/inprogress-demandes/inprogress-demandes.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -27,14 +30,16 @@ import { EditDemandeComponent } from './components/edit-demande/edit-demande.com
     EtabChartComponent,
     LoginComponent,
     EditDemandeComponent,
-   
+    InprogressDemandesComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-   
-    
-    
+    DataTablesModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

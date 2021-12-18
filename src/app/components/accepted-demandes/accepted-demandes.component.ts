@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from 'src/app/models/response';
+import { DemandeService } from 'src/app/services/demande.service';
 
 @Component({
   selector: 'app-accepted-demandes',
@@ -6,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accepted-demandes.component.css',
   '../../../assets/css/vertical-layout-light/style.css'
 ]
-  
+
 })
 export class AcceptedDemandesComponent implements OnInit {
-
-  constructor() { }
+  demandes! : any;
+  constructor(private demandeService : DemandeService) { }
 
   ngOnInit(): void {
+    this.demandeService.findByLibelle('acceptee').subscribe(
+      (res : Response) => {
+          this.demandes = res.result;
+      },
+      (err) =>{
+        console.log(err);
+      }
+    );
   }
 
 }

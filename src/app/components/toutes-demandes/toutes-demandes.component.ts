@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from 'src/app/models/response';
+import { DemandeService } from 'src/app/services/demande.service';
 
 @Component({
   selector: 'app-toutes-demandes',
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   '../../../assets/css/vertical-layout-light/style.css']
 })
 export class ToutesDemandesComponent implements OnInit {
-
-  constructor() { }
+  demandes! : any;
+  constructor(private demandeService : DemandeService) { }
 
   ngOnInit(): void {
+    this.demandeService.findAll().subscribe(
+      (res : Response) => {
+        this.demandes = res.result;
+      },
+      (err) => {
+        console.log(err);
+      }
+    )
+
   }
 
 }

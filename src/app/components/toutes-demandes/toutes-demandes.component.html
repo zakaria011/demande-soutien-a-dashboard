@@ -5,96 +5,97 @@
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Tous les demandes </h4>
-              
+
               <div class="table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
-          
+
                       <th>Code Demande</th>
                       <th> Demandeur</th>
                       <th>Date de Creation</th>
                       <th>Status</th>
                       <th>Modifier</th>
 
-            
+
 
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      
+                    <tr *ngFor="let demande of demandes">
+
                       <td>53275531</td>
-                      <td>Jacob</td>
-                      <td>12 May 2017</td>
-                      <td><label class="badge badge-danger">Pending</label></td>
+                      <td>{{demande.nom}}  {{demande.prenom}}</td>
+                      <td>{{demande.created_at}}</td>
+
+                      <td><label class="badge badge-warning" style="color:black">{{demande.libelle}}</label></td>
                       <td>
                         <a class="nav-link" href="../../pages/forms/basic_elements.html">
                           <i class="mdi mdi-border-color"></i>
                           <i class="mdi mdi-delete-outline"></i>
-                          
+
                         </a>
                       </td>
                     </tr>
 
                     <tr>
-                      
+
                       <td>53275531</td>
                       <td>Jacob</td>
                       <td>12 May 2017</td>
-                      <td><label class="badge badge-warning">In progress</label></td>
+                      <td><label class="badge badge-warning" style="color:black">In progress</label></td>
                       <td>
                         <a class="nav-link" href="../../pages/forms/basic_elements.html">
                           <i class="mdi mdi-border-color"></i>
                           <i class="mdi mdi-delete-outline"></i>
-                          
+
                         </a>
                       </td>
                     </tr>
 
 
                     <tr>
-                      
+
                       <td>53275531</td>
                       <td>Jacob</td>
                       <td>12 May 2017</td>
-                      <td><label class="badge badge-success">Completed</label></td>
+                      <td><label class="badge badge-success" style="color:black">Completed</label></td>
                       <td>
                         <a class="nav-link" href="../../pages/forms/basic_elements.html">
                           <i class="mdi mdi-border-color"></i>
                           <i class="mdi mdi-delete-outline"></i>
-                          
+
                         </a>
                       </td>
                     </tr>
 
                     <tr>
-                      
+
                       <td>53275531</td>
                       <td>Jacob</td>
                       <td>12 May 2017</td>
-                      <td><label class="badge badge-info">Fixed</label></td>
+                      <td><label class="badge badge-danger" style="color:black">Fixed</label></td>
                       <td>
                         <a class="nav-link" href="../../pages/forms/basic_elements.html">
                           <i class="mdi mdi-border-color"></i>
                           <i class="mdi mdi-delete-outline"></i>
-                          
+
                         </a>
                       </td>
                     </tr>
-                    
-                  
-                    
-                    
+
+
+
+
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
-        
-       
-        
+
+
+
     <!-- content-wrapper ends -->
     <!-- partial:../../partials/_footer.html -->
     <footer class="footer">
