@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from 'src/app/models/response';
+import { DemandeService } from 'src/app/services/demande.service';
 
 @Component({
   selector: 'app-demandes-encours',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemandesEncoursComponent implements OnInit {
 
-  constructor() { }
+  demandes! : any;
+  constructor(private demandeService : DemandeService) { }
 
   ngOnInit(): void {
+
+    this.demandeService.findByLibelle('en cours').subscribe(
+      (res : Response) => {
+        this.demandes = res.result;
+        console.log(res.result);
+      },
+
+      (err) => {
+        console.log(err);
+      },
+
+      () => {
+
+      }
+    )
   }
 
 }

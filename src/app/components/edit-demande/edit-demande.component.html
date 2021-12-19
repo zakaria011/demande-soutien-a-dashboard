@@ -3,160 +3,160 @@
       <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
-            <div class="card-body">
+            <div class="card-body" id = "htmlData">
             <h4 class="card-title"> Demande Soutien Type A </h4>
 
               <form>
-                
-          
+
+
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>N° Demande: </b></p>
                   </div>
                   <div class="divider">
                     <span></span><span>Informations Demandeur</span><span></span>
                   </div>
-                  
+
 
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Nom : </b></p>
+
+                    <p><b>Nom : {{demandeDetails.nom}} </b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Prénom : </b></p>
+
+                    <p><b>Prénom : {{demandeDetails.prenom}} </b></p>
                   </div>
-                    
+
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Email : </b></p>
-                  </div>
-                  <div class="form-group col-md-6">
-                    
-                    <p><b>N° Téléphone : </b></p>
+
+                    <p><b>Email : {{demandeDetails.email}} </b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Fonctionnalité au sein de l'établissement :</b></p>
+
+                    <p>N° Téléphone : <b>{{demandeDetails.numtel}} </b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Grade :</b></p>
+
+                    <p><b>Fonctionnalité au sein de l'établissement : {{isProfesseur()}}</b></p>
                   </div>
-                  
+                  <div class="form-group col-md-6" *ngIf = "is_prof">
+
+                    <p><b>Grade : {{demandeDetails.libelle}}</b></p>
+                  </div>
+
+                  <div class="form-group col-md-6" *ngIf = "!is_prof">
+
+                    <p><b>Fonctionnaire ou salarié : {{isOfficiel()}}</b></p>
+                  </div>
+                  <div class="form-group col-md-6" *ngIf = "!is_prof">
+
+                    <p><b>Année Thèse : {{demandeDetails.annee_these}}</b></p>
+                  </div>
+                  <div class="form-group col-md-6" *ngIf = "!is_prof">
+
+                    <p><b>Directeur Thèse : {{demandeDetails.directeur_these}}</b></p>
+                  </div>
+                  <div class="form-group col-md-6" *ngIf = "!is_prof">
+
+                    <p><b>CED : {{demandeDetails.ced}}</b></p>
+                  </div>
+
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Fonctionnaire ou salarié :</b></p>
+
+                    <p><b>Etablissement : </b></p>
+                  </div>
+
+                  <div class="form-group col-md-6">
+
+                    <p><b>Département : {{demandeDetails.departement}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Année Thèse :</b></p>
+
+                    <p><b>Entité Recherche : {{demandeDetails.entite_de_recherche}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Directeur Thèse :</b></p>
-                  </div>
-                  <div class="form-group col-md-6">
-                    
-                    <p><b>CED :</b></p>
-                  </div>
-                
-                  <div class="form-group col-md-6">
-                    
-                    <p><b>Etablissement :</b></p>
-                  </div>
-                
-                  <div class="form-group col-md-6">
-                    
-                    <p><b>Département :</b></p>
-                  </div>
-                  <div class="form-group col-md-6">
-                    
-                    <p><b>Entité Recherche :</b></p>
-                  </div>
-                  <div class="form-group col-md-6">
-                    
-                    <p><b>Responsable Entité:</b></p>
+
+                    <p><b>Responsable Entité: {{demandeDetails.responsable_entite}}</b></p>
                   </div>
 
                   <div class="divider">
                     <span></span><span>Information sur la mssion ou stage</span><span></span>
                   </div>
                   <div class="form-group col-md-6">
-                    
-        
-                    <p><b>Objet d la mission ou stage :</b></p>
+
+
+                    <p><b>Objet d la mission ou stage : {{demandeDetails.intitule}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b></b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Pays :</b></p>
+
+                    <p><b>Pays : {{demandeDetails.pays}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Ville :</b></p>
+
+                    <p><b>Ville : {{demandeDetails.ville}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Date Début :</b></p>
+
+                    <p><b>Date Début : {{demandeDetails.date_debut}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Date fin :</b></p>
+
+                    <p><b>Date fin : {{demandeDetails.date_fin}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Date Départ :</b></p>
+
+                    <p><b>Date Départ : {{demandeDetails.date_depart}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
-                    <p><b>Date Retour :</b></p>
+
+                    <p><b>Date Retour : {{demandeDetails.date_retour}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Projet Financé :</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Préciser le cadre :</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Intitulé du projet de coopération :</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Responsable marocain du projet :</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Partenaire(s) étranger(s) impliqué(s) :</b></p>
                   </div>
                   <div class="divider">
                     <span></span><span>Information sur le soutien</span><span></span>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Avez-vous déja bénéficié d'un soutien Type A cette année?:</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b></b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Préciser le montant :</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Nature de soutien demandé :</b></p>
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Montant Titre Transport :</b></p>
                   </div>
                   <div class="form-group col-md-6">
@@ -164,7 +164,7 @@
                     <input type="password" class="form-control" id="inputPassword4" placeholder="">
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Montant Frais D'inscription :</b></p>
                   </div>
                   <div class="form-group col-md-6">
@@ -172,7 +172,7 @@
                     <input type="password" class="form-control" id="inputPassword4" placeholder="">
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b>Montant Hébergement:</b></p>
                   </div>
                   <div class="form-group col-md-6">
@@ -180,35 +180,35 @@
                     <input type="password" class="form-control" id="inputPassword4" placeholder="">
                   </div>
                   <div class="form-group col-md-6">
-                    
+
                     <p><b> Autre Montant :</b></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Autre Montant édité</label>
                     <input type="password" class="form-control" id="inputPassword4" placeholder="">
                   </div>
-                  
-
-                  
 
 
 
 
 
-                   
-                   
+
+
+
+
+
                 </div>
-               
-                
-                  
-                  
-                
-               
-                
+
+
+
+
+
+
+
                 <div class="form-group col-md-6">
                   <button (click)="validchanges()" style=" margin-left: 20px;" type="button" class="btn btn-primary">Valider</button>
                   <button (click)="refusedchanges()"style=" margin-left: 20px;" type="button" class="btn btn-outline-danger">Refuser</button>
-                  <button style=" margin-left: 20px;"  type="button" class="btn btn-secondary">Imprimer</button>
+                  <button (click)="openPDF()" style=" margin-left: 20px;"  type="button" class="btn btn-secondary">Imprimer</button>
                   <button  (click)="open(mymodal)" style=" margin-left: 20px;"  type="button" class="btn btn-warning">pièce(s) manquante(s)</button>
                   <ng-template #mymodal let-modal>
                     <div class="modal-header">
@@ -229,12 +229,12 @@
                   </ng-template>
 
 
-                  
+
                 </div>
               </form>
             </div>
-  
-             
+
+
         </div>
         </div>
       </div>

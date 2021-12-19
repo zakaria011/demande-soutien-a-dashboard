@@ -16,4 +16,8 @@ export class DemandeService {
   findByLibelle(state : string){
     return this.httpClient.get<Response>(this.baseUrl+'findByState/'+state);
   }
+
+  findDetails(id : string){
+    return this.httpClient.get<Response>(this.baseUrl+'findDetails/'+id);
+  }
 }

@@ -19,10 +19,10 @@ const ROUTES : Routes = [
   {path : 'infos', component : InfosDemandeursComponent},
   {path : 'chart', component : EtabChartComponent},
   {path : 'login', component : LoginComponent},
-  {path : 'edit', component : EditDemandeComponent},
+  {path : 'edit/:id', component : EditDemandeComponent},
   {path : 'encours', component : DemandesEncoursComponent},
- 
-  
+
+
 
 ]
 
