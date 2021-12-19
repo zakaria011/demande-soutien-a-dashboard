@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InprogressDemandesComponent } from './components/inprogress-demandes/inprogress-demandes.component';
 import { DataTablesModule } from 'angular-datatables';
 import { DemandesEncoursComponent } from './components/demandes-encours/demandes-encours.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { DemandesEncoursComponent } from './components/demandes-encours/demandes
     AppRoutingModule,
     DataTablesModule,
     HttpClientModule,
+    NgbModule,
 
   ],
   providers: [],

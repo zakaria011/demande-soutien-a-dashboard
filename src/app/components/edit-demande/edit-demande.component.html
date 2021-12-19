@@ -4,7 +4,7 @@
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-            <h4 class="card-title"> Demmande Soutien Type A </h4>
+            <h4 class="card-title"> Demande Soutien Type A </h4>
 
               <form>
                 
@@ -14,10 +14,10 @@
                     
                     <p><b>N° Demande: </b></p>
                   </div>
-                  <div class="form-group col-md-6">
-                    
-                    <p><b></b></p>
+                  <div class="divider">
+                    <span></span><span>Informations Demandeur</span><span></span>
                   </div>
+                  
 
                   <div class="form-group col-md-6">
                     
@@ -44,6 +44,7 @@
                     
                     <p><b>Grade :</b></p>
                   </div>
+                  
                   <div class="form-group col-md-6">
                     
                     <p><b>Fonctionnaire ou salarié :</b></p>
@@ -60,10 +61,12 @@
                     
                     <p><b>CED :</b></p>
                   </div>
+                
                   <div class="form-group col-md-6">
                     
                     <p><b>Etablissement :</b></p>
                   </div>
+                
                   <div class="form-group col-md-6">
                     
                     <p><b>Département :</b></p>
@@ -76,8 +79,13 @@
                     
                     <p><b>Responsable Entité:</b></p>
                   </div>
+
+                  <div class="divider">
+                    <span></span><span>Information sur la mssion ou stage</span><span></span>
+                  </div>
                   <div class="form-group col-md-6">
                     
+        
                     <p><b>Objet d la mission ou stage :</b></p>
                   </div>
                   <div class="form-group col-md-6">
@@ -128,9 +136,16 @@
                     
                     <p><b>Partenaire(s) étranger(s) impliqué(s) :</b></p>
                   </div>
+                  <div class="divider">
+                    <span></span><span>Information sur le soutien</span><span></span>
+                  </div>
                   <div class="form-group col-md-6">
                     
                     <p><b>Avez-vous déja bénéficié d'un soutien Type A cette année?:</b></p>
+                  </div>
+                  <div class="form-group col-md-6">
+                    
+                    <p><b></b></p>
                   </div>
                   <div class="form-group col-md-6">
                     
@@ -194,7 +209,24 @@
                   <button (click)="validchanges()" style=" margin-left: 20px;" type="button" class="btn btn-primary">Valider</button>
                   <button (click)="refusedchanges()"style=" margin-left: 20px;" type="button" class="btn btn-outline-danger">Refuser</button>
                   <button style=" margin-left: 20px;"  type="button" class="btn btn-secondary">Imprimer</button>
-                  <button style=" margin-left: 20px;"  type="button" class="btn btn-warning">pièce(s) manquante(s)</button>
+                  <button  (click)="open(mymodal)" style=" margin-left: 20px;"  type="button" class="btn btn-warning">pièce(s) manquante(s)</button>
+                  <ng-template #mymodal let-modal>
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+                      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-primary" (click)="modal.close('Save click')">Send</button>
+                    </div>
+                  </ng-template>
 
 
                   
