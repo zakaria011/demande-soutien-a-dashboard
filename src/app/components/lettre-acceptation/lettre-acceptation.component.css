@@ -1,0 +1,126 @@
+@page {
+    size: A4;
+}
+@media screen {
+    header, footer {
+        background: white;
+    }
+}
+.first-page, .map {
+    display: flex;
+    flex-direction: column;
+}
+header {
+    order: 1;
+}
+.content {
+    order: 2;
+}
+footer {
+    order: 3;
+}
+.first-page header {
+    display: flex;
+    flex-direction: row;
+    height: 30mm;
+}    
+.from {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 90mm; 
+}
+.to {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    padding-top: 10mm;
+    margin-left: 60px;
+    
+}
+.presid {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    padding-top: 8mm;
+    margin-left: 300px;
+    margin-top:0px;
+    
+}
+.first-page .content {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;         
+}
+.first-page footer {
+    flex-grow: auto;
+    flex-shrink: 0;
+    flex-basis: auto; 
+
+}
+.image {
+    float: left;
+    height: 100px;
+    width:100px;
+    margin-top: 20px;
+    margin-left: 60px;
+    }
+.map header {
+    font-size: smaller; 
+}
+.map .content {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;   
+}
+.pull-left {
+    padding-left: 90mm;
+}
+.pull-top {
+    padding-top: 40mm;
+}
+header .ornament {
+    float:center;
+}
+footer .ornament {
+    float: right;
+}
+/* Typography */
+body {  
+    font-family: 'Gentium Basic';
+    font-size: 12pt;
+}
+strong {
+    font-family: 'Gentium Basic';
+    font-weight: 700;
+}
+em {
+    font-family: 'Gentium Basic';
+    font-variant: italic;
+}
+em strong {
+    font-family: 'Gentium Basic';
+    font-style: italic;
+    font-weight: 700;
+}
+.content {
+    hyphens: auto;  
+    line-height: 1.618;
+    text-align: justify;
+}
+.to {
+    font-family: 'Gentium Basic';
+    font-weight: 700;
+}
+.presid {
+    font-family: 'Gentium Basic';
+    font-weight: 700;
+}
+q {
+    quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+} 

@@ -18,6 +18,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { DemandesEncoursComponent } from './components/demandes-encours/demandes-encours.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LettreAcceptationComponent } from './components/lettre-acceptation/lettre-acceptation.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditDemandeComponent,
     InprogressDemandesComponent,
     DemandesEncoursComponent,
+    LettreAcceptationComponent,
 
 
   ],

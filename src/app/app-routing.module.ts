@@ -11,6 +11,7 @@ import { EtabChartComponent } from './components/etab-chart/etab-chart.component
 import { LoginComponent } from './components/login/login.component';
 import { EditDemandeComponent } from './components/edit-demande/edit-demande.component';
 import { DemandesEncoursComponent } from './components/demandes-encours/demandes-encours.component';
+import { LettreAcceptationComponent } from './components/lettre-acceptation/lettre-acceptation.component';
 const ROUTES : Routes = [
   {path : 'home', component : HomeComponent},
   {path : 'demandes', component : ToutesDemandesComponent},
@@ -21,6 +22,7 @@ const ROUTES : Routes = [
   {path : 'login', component : LoginComponent},
   {path : 'edit/:id', component : EditDemandeComponent},
   {path : 'encours', component : DemandesEncoursComponent},
+  {path : 'lettreaccep', component : LettreAcceptationComponent},
 
 
 
