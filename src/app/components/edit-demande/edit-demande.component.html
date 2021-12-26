@@ -3,13 +3,13 @@
       <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
           <div class="card">
-            <div class="card-body" id = "htmlData">
+            <div class="card-body" >
             <h4 class="card-title"> Demande Soutien Type A </h4>
 
-              <form>
+              <form [formGroup]="editAction">
 
 
-                <div class="form-row">
+                <div class="form-row" id = "htmlData">
                   <div class="form-group col-md-6">
 
                     <p><b>N° Demande: </b></p>
@@ -21,16 +21,16 @@
 
                   <div class="form-group col-md-6">
 
-                    <p><b>Nom : {{demandeDetails.nom}} </b></p>
+                    <p>Nom : <b>{{demandeDetails.nom}} </b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Prénom : {{demandeDetails.prenom}} </b></p>
+                    <p>Prénom : <b>{{demandeDetails.prenom}} </b></p>
                   </div>
 
                   <div class="form-group col-md-6">
 
-                    <p><b>Email : {{demandeDetails.email}} </b></p>
+                    <p>Email : <b>{{demandeDetails.email}} </b></p>
                   </div>
                   <div class="form-group col-md-6">
 
@@ -38,55 +38,55 @@
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Fonctionnalité au sein de l'établissement : {{isProfesseur()}}</b></p>
+                    <p>Fonctionnalité au sein de l'établissement :<b> {{isProfesseur()}}</b></p>
                   </div>
                   <div class="form-group col-md-6" *ngIf = "is_prof">
 
-                    <p><b>Grade : {{demandeDetails.libelle}}</b></p>
+                    <p>Grade : <b>{{demandeDetails.libelle}}</b></p>
                   </div>
 
                   <div class="form-group col-md-6" *ngIf = "!is_prof">
 
-                    <p><b>Fonctionnaire ou salarié : {{isOfficiel()}}</b></p>
+                    <p>Fonctionnaire ou salarié : <b>{{isOfficiel()}}</b></p>
                   </div>
                   <div class="form-group col-md-6" *ngIf = "!is_prof">
 
-                    <p><b>Année Thèse : {{demandeDetails.annee_these}}</b></p>
+                    <p>Année Thèse : <b>{{demandeDetails.annee_these}}</b></p>
                   </div>
                   <div class="form-group col-md-6" *ngIf = "!is_prof">
 
-                    <p><b>Directeur Thèse : {{demandeDetails.directeur_these}}</b></p>
+                    <p>Directeur Thèse : <b>{{demandeDetails.directeur_these}}</b></p>
                   </div>
                   <div class="form-group col-md-6" *ngIf = "!is_prof">
 
-                    <p><b>CED : {{demandeDetails.ced}}</b></p>
+                    <p>CED : <b>{{demandeDetails.ced}}</b></p>
                   </div>
 
                   <div class="form-group col-md-6">
 
-                    <p><b>Etablissement : </b></p>
+                    <p>Etablissement : <b>{{demandeDetails.etablissement}}</b></p>
                   </div>
 
                   <div class="form-group col-md-6">
 
-                    <p><b>Département : {{demandeDetails.departement}}</b></p>
+                    <p>Département : <b>{{demandeDetails.departement}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Entité Recherche : {{demandeDetails.entite_de_recherche}}</b></p>
+                    <p>Entité Recherche : <b>{{demandeDetails.entite_de_recherche}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Responsable Entité: {{demandeDetails.responsable_entite}}</b></p>
+                    <p>Responsable Entité:<b> {{demandeDetails.responsable_entite}}</b></p>
                   </div>
 
                   <div class="divider">
-                    <span></span><span>Information sur la mssion ou stage</span><span></span>
+                    <span></span><span>Information sur {{getTitle()}}</span><span></span>
                   </div>
                   <div class="form-group col-md-6">
 
 
-                    <p><b>Objet d la mission ou stage : {{demandeDetails.intitule}}</b></p>
+                    <p>Objet de la {{getTitle()}} : <b>{{demandeDetails.intitule}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
@@ -94,54 +94,66 @@
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Pays : {{demandeDetails.pays}}</b></p>
+                    <p>Pays : <b>{{demandeDetails.pays}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Ville : {{demandeDetails.ville}}</b></p>
+                    <p>Ville : <b>{{demandeDetails.ville}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Date Début : {{demandeDetails.date_debut}}</b></p>
+                    <p>Date Début : <b>{{demandeDetails.date_debut}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Date fin : {{demandeDetails.date_fin}}</b></p>
+                    <p>Date fin : <b>{{demandeDetails.date_fin}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Date Départ : {{demandeDetails.date_depart}}</b></p>
+                    <p>Date Départ : <b>{{demandeDetails.date_depart}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Date Retour : {{demandeDetails.date_retour}}</b></p>
+                    <p>Date Retour : <b>{{demandeDetails.date_retour}}</b></p>
                   </div>
-                  <div class="form-group col-md-6">
 
-                    <p><b>Projet Financé :</b></p>
+                  <div class="form-group col-md-6"  *ngIf = "!is_miss">
+
+                    <p> Intitulé de  la participation :<b>{{demandeDetails.intitule_participation}}</b></p>
                   </div>
-                  <div class="form-group col-md-6">
 
-                    <p><b>Préciser le cadre :</b></p>
+                  <div class="form-group col-md-6"  *ngIf = "!is_miss">
+
+                    <p> Nature de la participation :<b>{{demandeDetails.nature_participation}}</b></p>
                   </div>
-                  <div class="form-group col-md-6">
 
-                    <p><b>Intitulé du projet de coopération :</b></p>
+
+                  <div class="form-group col-md-6" *ngIf = "is_miss">
+
+                    <p>Projet Financé : <b>{{isFinance()}}</b></p>
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-6" *ngIf = "is_miss">
 
-                    <p><b>Responsable marocain du projet :</b></p>
+                    <p>Préciser le cadre : <b>{{demandeDetails.cadre}}</b></p>
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-6" *ngIf = "is_miss">
 
-                    <p><b>Partenaire(s) étranger(s) impliqué(s) :</b></p>
+                    <p>Intitulé du projet de coopération :<b>{{demandeDetails.intitule_projet}}</b></p>
+                  </div>
+                  <div class="form-group col-md-6" *ngIf = "is_miss">
+
+                    <p>Responsable marocain du projet :<b>{{demandeDetails.respo_marocain}}</b></p>
+                  </div>
+                  <div class="form-group col-md-6" *ngIf = "is_miss">
+
+                    <p>Partenaire(s) étranger(s) impliqué(s) :<b>{{demandeDetails.respo_etranger}}</b></p>
                   </div>
                   <div class="divider">
                     <span></span><span>Information sur le soutien</span><span></span>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Avez-vous déja bénéficié d'un soutien Type A cette année?:</b></p>
+                    <p>A-t-il déja bénéficié d'un soutien Type A cette année?: <b>{{isBeneficie()}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
@@ -149,43 +161,51 @@
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Préciser le montant :</b></p>
+                    <p>Montant de soutien précedent : <b>{{demandeDetails.montant_soutien_precedent}} DH</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Nature de soutien demandé :</b></p>
+                    <p>Nature de soutien demandé : <b>{{demandeDetails.type}}</b></p>
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Montant Titre Transport :</b></p>
+                    <p>Montant Titre Transport :<b>{{montants[1].montant}} DH</b></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Montant Titre Transport édité</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                    <input type="number" class="form-control" id="inputPassword4" placeholder=""
+                      formControlName="montantTransport"
+                    >
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Montant Frais D'inscription :</b></p>
+                    <p>Montant Frais D'inscription : <b>{{montants[2].montant}} DH</b></p>
                   </div>
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-6" id ="exclude">
                     <label for="inputPassword4">Montant Frais D'inscription édité</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                    <input type="number" class="form-control" id="inputPassword4" placeholder=""
+                      formControlName="montantInscription"
+                    >
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b>Montant Hébergement:</b></p>
+                    <p>Montant Hébergement: <b>{{montants[0].montant}} DH</b></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Montant Hébergement édité</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                    <input type="number" class="form-control" id="inputPassword4" placeholder=""
+                      formControlName="montantHeberegement"
+                    >
                   </div>
                   <div class="form-group col-md-6">
 
-                    <p><b> Autre Montant :</b></p>
+                    <p> Autre Montant: <b>{{montants[3].montant}} DH</b></p>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Autre Montant édité</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="">
+                    <input type="number" class="form-control" id="inputPassword4" placeholder=""
+                      formControlName="autreMontant"
+                    >
                   </div>
 
 
@@ -205,11 +225,12 @@
 
 
 
-                <div class="form-group col-md-6">
-                  <button (click)="validchanges()" style=" margin-left: 20px;" type="button" class="btn btn-primary">Valider</button>
+                <div class="form-group col-md-12">
+                  <button (click)="modifySoutien()" style=" margin-left: 20px;" type="button" class="btn btn-warning">Modifier le soutien</button>
+                  <button (click)="validchanges()" style=" margin-left: 20px;" type="button" class="btn btn-success">Valider</button>
                   <button (click)="refusedchanges()"style=" margin-left: 20px;" type="button" class="btn btn-outline-danger">Refuser</button>
                   <button (click)="openPDF()" style=" margin-left: 20px;"  type="button" class="btn btn-secondary">Imprimer</button>
-                  <button  (click)="open(mymodal)" style=" margin-left: 20px;"  type="button" class="btn btn-warning">pièce(s) manquante(s)</button>
+                  <button  (click)="open(mymodal)" style=" margin-left: 20px;"  type="button" class="btn btn-primary">pièce(s) manquante(s)</button>
                   <ng-template #mymodal let-modal>
                     <div class="modal-header">
                       <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>

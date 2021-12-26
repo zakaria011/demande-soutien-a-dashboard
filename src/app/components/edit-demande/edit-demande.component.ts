@@ -3,9 +3,10 @@ import Swal from 'sweetalert2';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DemandeService } from 'src/app/services/demande.service';
 import { Response } from 'src/app/models/response';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-demande',
@@ -15,12 +16,26 @@ import { Response } from 'src/app/models/response';
 export class EditDemandeComponent implements OnInit {
   title = 'appBootstrap';
   demandeDetails! : any;
+  montants! : any;
   is_prof! : boolean;
   is_miss!:boolean;
   closeResult: string = '';
+  editAction! : FormGroup;
   constructor(private modalService: NgbModal,private activatedRoute : ActivatedRoute,
-            private demandeService : DemandeService
-    ) {}
+            private demandeService : DemandeService, private router : Router,
+            private formBuilder : FormBuilder
+    ) {
+
+        this.editAction = formBuilder.group(
+          {
+            montantTransport : ['',Validators.required],
+            montantInscription : ['',Validators.required],
+            montantHeberegement : ['',Validators.required],
+            autreMontant : ['',Validators.required]
+          }
+        )
+    }
+
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -28,6 +43,7 @@ export class EditDemandeComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
+
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -42,12 +58,14 @@ export class EditDemandeComponent implements OnInit {
     let id = this.activatedRoute.snapshot.params.id;
     this.demandeService.findDetails(id).subscribe(
       (res : Response) => {
-        this.demandeDetails = res.result;
+        this.demandeDetails = res.result.demande;
+        this.montants = res.result.motants;
         this.is_prof = res.result.is_professeur;
         this.is_miss = res.result.is_mission;
         console.log(this.demandeDetails);
-        console.log(res.result.is_mission);
-        console.log(res.result.is_professeur);
+        console.log("sdsdsjdsd");
+        console.log(this.demandeDetails.demandeId);
+
       },
       (err) => {
         console.log(err);
@@ -65,11 +83,29 @@ export class EditDemandeComponent implements OnInit {
       cancelButtonText: 'Non,Cancel'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
-          ' Refusée!',
-          'Cette demande a été refusée.',
-          'success'
+        this.demandeService.Refuse(this.demandeDetails.demandeId).subscribe(
+          (res : Response) => {
+            console.log(res);
+            Swal.fire(
+              ' Refusée!',
+              'Cette demande a été refusée.',
+              'success'
+            )
+
+            this.router.navigate(['/refused']);
+
+          },
+
+          (err) => {
+            console.log(err);
+          },
+
+          () => {
+
+          }
+
         )
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',
@@ -89,11 +125,29 @@ export class EditDemandeComponent implements OnInit {
       cancelButtonText: 'Non,Cancel'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
-          ' Validée!',
-          'Cette demande a été validée.',
-          'success'
+        this.demandeService.Validate(this.demandeDetails.demandeId).subscribe(
+          (res : Response)=> {
+            console.log(res);
+
+            Swal.fire(
+            ' Validée!',
+            'Cette demande a été validée.',
+            'success'
+            )
+
+            this.router.navigate(['/accepted']);
+          },
+
+          (err) => {
+            console.log(err);
+          },
+
+          () => {
+
+          }
+
         )
+
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',
@@ -132,6 +186,79 @@ export class EditDemandeComponent implements OnInit {
         return "Oui";
       else
           return "Non";
+    }
+
+    public getTitle() : string {
+      if(this.demandeDetails.is_mission){
+        return "Mission ou Stage";
+      }else {
+        return "Manifestation scientifique";
+      }
+    }
+
+    public isBeneficie(): string {
+      if(this.demandeDetails.is_beneficie){
+        return "Oui"
+      }else
+        return "Non";
+    }
+
+    public isFinance() : string  {
+      if(this.demandeDetails.is_rem)
+        return "Oui";
+      else
+        return "Non";
+    }
+
+
+
+    public modifySoutien(){
+      const montants = {
+        soutienId : this.demandeDetails.soutienId,
+        ...this.editAction.getRawValue()
+      }
+      console.log(montants);
+      Swal.fire({
+        title: 'Etes-vous sur de modifier les montants saisis de cette demande?',
+
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, Valider!',
+        cancelButtonText: 'Non,Cancel'
+      }).then((result) => {
+        if (result.value) {
+          this.demandeService.modifySoutien(montants).subscribe(
+            (res : Response)=> {
+              console.log(res);
+              if(res.status== 200){
+                Swal.fire(
+                  ' Validée!',
+                  'L\'opération a été validée.',
+                  'success'
+              )
+                this.router.navigate(['/edit',this.demandeDetails.demandeId])
+              }
+            },
+
+            (err) => {
+              console.log(err);
+            },
+
+            () => {
+
+            }
+
+          )
+
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          Swal.fire(
+            'Cancelled',
+            'Vous pouvez revenir :)',
+            'error'
+          )
+        }
+      })
+
     }
 
 }

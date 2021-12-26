@@ -11,80 +11,24 @@
                 <table id="example" class="table table-striped table-bordered" datatable style="width:100%">
                   <thead>
                     <tr>
-
                       <th>Code Demande</th>
                       <th> Demandeur</th>
                       <th>Date de Creation</th>
                       <th>Status</th>
                       <th>Modifier</th>
-
-
-
                     </tr>
                   </thead>
+
                   <tbody>
                     <tr *ngFor="let demande of demandes">
-
                       <td>53275531</td>
                       <td>{{demande.nom}}  {{demande.prenom}}</td>
                       <td>{{demande.created_at}}</td>
-                      <td><label class="badge badge-success">{{demande.libelle}}</label></td>
+                      <td><label class="badge badge-success" style="color:black">Acceptée</label></td>
                       <td>
-                        <button id="open" type="button"class="btn btn-primary btn-sm" routerLink="/edit">En Savoir plus</button>
-
-                        
-
-
-
-
-
+                        <button id="open" type="button"class="btn btn-primary btn-sm" [routerLink]="['/edit',demande.id]">En Savoir plus</button>
                       </td>
                     </tr>
-
-                    <tr>
-
-                      <td>53275531</td>
-                      <td>Jacob</td>
-                      <td>12 May 2017</td>
-                      <td><label class="badge badge-success">Completed</label></td>
-                      <td>
-                        <button id="open" type="button"class="btn btn-primary btn-sm" routerLink="/edit">En Savoir plus</button>
-                        
-                          
-
-                      </td>
-                    </tr>
-
-
-                    <tr>
-
-                      <td>53275531</td>
-                      <td>Jacob</td>
-                      <td>12 May 2017</td>
-                      <td><label class="badge badge-success">Completed</label></td>
-                      <td>
-                        <button id="open" type="button"class="btn btn-primary btn-sm" routerLink="/edit">En Savoir plus</button>
-
-                      
-                      </td>
-                    </tr>
-
-                    <tr>
-
-                      <td>53275531</td>
-                      <td>Jacob</td>
-                      <td>12 May 2017</td>
-                      <td><label class="badge badge-success">Completed</label></td>
-                      <td>
-                        <button id="open" type="button"class="btn btn-primary btn-sm" routerLink="/edit">En Savoir plus</button>
-
-                        
-                      </td>
-                    </tr>
-
-
-
-
                   </tbody>
                 </table>
               </div>

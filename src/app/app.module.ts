@@ -17,6 +17,7 @@ import { InprogressDemandesComponent } from './components/inprogress-demandes/in
 import { DataTablesModule } from 'angular-datatables';
 import { DemandesEncoursComponent } from './components/demandes-encours/demandes-encours.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     DataTablesModule,
     HttpClientModule,
     NgbModule,
-
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

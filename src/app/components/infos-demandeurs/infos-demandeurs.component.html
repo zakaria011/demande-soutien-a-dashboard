@@ -22,14 +22,14 @@
                       </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr  *ngFor="let demandeur of demandeurs">
 
-                      <td>1</td>
-                      <td>Mseggar</td>
-                      <td>Fati</td>
-                      <td>fatima@gmail.com</td>
-                      <td>0645127819</td>
-                      <td>Enseignant Chercheur</td>
+                      <td>{{demandeur.id}}</td>
+                      <td>{{demandeur.nom}}</td>
+                      <td>{{demandeur.prenom}}</td>
+                      <td>{{demandeur.email}}</td>
+                      <td>{{demandeur.numtel}}</td>
+                      <td>{{getFonction(demandeur.is_professeur)}}</td>
                       <td>
                       <button  (click)="open(mymodal)" style=" margin-left: 20px;"  type="button" class="btn btn-warning">Plus D'infos</button>
                   <ng-template #mymodal let-modal>

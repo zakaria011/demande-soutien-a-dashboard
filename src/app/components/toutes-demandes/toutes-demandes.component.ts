@@ -24,4 +24,17 @@ export class ToutesDemandesComponent implements OnInit {
 
   }
 
+  getState(libelle : string): string{
+
+    if(libelle == "en cours"){
+      return "warning";
+    }
+    if(libelle == "refusee"){
+      return "danger";
+    }else {
+      return "success";
+    }
+
+  }
+
 }
