@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DemandeService } from 'src/app/services/demande.service';
 import { Response } from 'src/app/models/response';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FileService } from 'src/app/services/file.service';
 
 @Component({
   selector: 'app-edit-demande',
@@ -19,11 +20,12 @@ export class EditDemandeComponent implements OnInit {
   montants! : any;
   is_prof! : boolean;
   is_miss!:boolean;
+  files!: any;
   closeResult: string = '';
   editAction! : FormGroup;
   constructor(private modalService: NgbModal,private activatedRoute : ActivatedRoute,
             private demandeService : DemandeService, private router : Router,
-            private formBuilder : FormBuilder
+            private formBuilder : FormBuilder,private fileService : FileService
     ) {
 
         this.editAction = formBuilder.group(
@@ -66,6 +68,18 @@ export class EditDemandeComponent implements OnInit {
         console.log("sdsdsjdsd");
         console.log(this.demandeDetails.demandeId);
 
+      },
+      (err) => {
+        console.log(err);
+      }
+    )
+
+    this.fileService.findByDemdeur(id).subscribe(
+      (res : Response) => {
+        if(res.status == 200){
+          this.files = res.result;
+          console.log(this.files);
+        }
       },
       (err) => {
         console.log(err);

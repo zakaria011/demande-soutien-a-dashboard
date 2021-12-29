@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Response } from '../models/response';
 
 @Injectable({
@@ -33,4 +34,10 @@ export class DemandeService {
   Refuse(id : string){
     return this.httpClient.post<Response>(this.baseUrl+'refuse',{'id' : id});
   }
+
+  getLettre(id : string){
+    return this.httpClient.get<Response>(this.baseUrl+'getLettre/'+id);
+  }
+
+
 }
