@@ -17,8 +17,16 @@ export class AcceptedDemandesComponent implements OnInit {
   ngOnInit(): void {
     this.demandeService.findByLibelle('acceptee').subscribe(
       (res : Response) => {
-          this.demandes = res.result;
-      },
+        this.demandes = res.result;
+        setTimeout(()=>{   
+          $('#datatableexample').DataTable( {
+            pagingType: 'full_numbers',
+            pageLength: 5,
+            processing: true,
+            lengthMenu : [5, 10, 25]
+        } );
+        }, 1);
+    },
       (err) =>{
         console.log(err);
       }

@@ -17,8 +17,16 @@ export class RefusedDemandesComponent implements OnInit {
     this.demandeService.findByLibelle("refusee").subscribe(
 
       (res : Response) => {
-          this.demandes = res.result;
-      },
+        this.demandes = res.result;
+        setTimeout(()=>{   
+          $('#datatableexample').DataTable( {
+            pagingType: 'full_numbers',
+            pageLength: 5,
+            processing: true,
+            lengthMenu : [5, 10, 25]
+        } );
+        }, 1);
+    },
       (err) => {
         console.log(err);
       },

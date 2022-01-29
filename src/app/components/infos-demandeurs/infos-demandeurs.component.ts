@@ -39,6 +39,14 @@ export class InfosDemandeursComponent implements OnInit {
         (res : Response)=>{
           if(res.status == 200){
             this.demandeurs = res.result;
+            setTimeout(()=>{   
+              $('#datatableexample').DataTable( {
+                pagingType: 'full_numbers',
+                pageLength: 5,
+                processing: true,
+                lengthMenu : [5, 10, 25]
+            } );
+            }, 1);
           }
         },
 

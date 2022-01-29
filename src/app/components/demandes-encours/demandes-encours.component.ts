@@ -17,8 +17,15 @@ export class DemandesEncoursComponent implements OnInit {
     this.demandeService.findByLibelle('en cours').subscribe(
       (res : Response) => {
         this.demandes = res.result;
-        console.log(res.result);
-      },
+        setTimeout(()=>{   
+          $('#datatableexample').DataTable( {
+            pagingType: 'full_numbers',
+            pageLength: 5,
+            processing: true,
+            lengthMenu : [5, 10, 25]
+        } );
+        }, 1);
+    },
 
       (err) => {
         console.log(err);
